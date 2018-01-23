@@ -23,7 +23,9 @@
 
  <!-- Run unit tests and generate junit.xml and clover.xml -->
  <target name="phpunit">
-  <exec executable="phpunit" failonerror="true"/>
+  <exec executable="phpunit" failonerror="true">
+    <arg line="--coverage-clover=${basedir}/build/logs/clover.xml"/>
+  </exec>
  </target>
 
  <!-- Run the pdepend, phpmd, phpcpd, phpcs, phpdoc and phploc tasks
