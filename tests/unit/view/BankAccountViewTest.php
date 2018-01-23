@@ -2,7 +2,7 @@
 /**
  * @small
  */
-class BankAccountViewTest extends PHPUnit_Framework_TestCase
+class BankAccountViewTest extends PHPUnit\Framework\TestCase
 {
     protected $request;
     protected $response;
@@ -36,7 +36,8 @@ class BankAccountViewTest extends PHPUnit_Framework_TestCase
         $view = new BankAccountView($this->request, $this->response);
 
         $this->assertEquals(
-          "The balance of bank account #1 is 0.00.\n", $view->render()
+          "The balance of bank account #1 is 0.00.\n",
+            $view->render()
         );
     }
 }

@@ -2,7 +2,7 @@
 /**
  * @small
  */
-class ViewFactoryTest extends PHPUnit_Framework_TestCase
+class ViewFactoryTest extends PHPUnit\Framework\TestCase
 {
     /**
      * @covers ViewFactory::getView

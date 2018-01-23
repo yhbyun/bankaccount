@@ -2,7 +2,7 @@
 /**
  * @small
  */
-class BankAccountControllerTest extends PHPUnit_Framework_TestCase
+class BankAccountControllerTest extends PHPUnit\Framework\TestCase
 {
     protected $controller;
     protected $mapper;
@@ -45,8 +45,10 @@ class BankAccountControllerTest extends PHPUnit_Framework_TestCase
 
         $this->response->expects($this->once())
                        ->method('set')
-                       ->with($this->equalTo('balance'),
-                              $this->equalTo(0));
+                       ->with(
+                           $this->equalTo('balance'),
+                              $this->equalTo(0)
+                       );
 
         $view = $this->controller->execute($this->request, $this->response);
 

@@ -2,7 +2,7 @@
 /**
  * @small
  */
-class BankAccountListViewTest extends PHPUnit_Framework_TestCase
+class BankAccountListViewTest extends PHPUnit\Framework\TestCase
 {
     protected $request;
     protected $response;
@@ -26,7 +26,7 @@ class BankAccountListViewTest extends PHPUnit_Framework_TestCase
         $this->response->expects($this->once())
                        ->method('get')
                        ->with($this->equalTo('ids'))
-                       ->will($this->returnValue(array(1)));
+                       ->will($this->returnValue([1]));
 
         $view = new BankAccountListView($this->request, $this->response);
 

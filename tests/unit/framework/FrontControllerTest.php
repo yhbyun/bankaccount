@@ -5,7 +5,7 @@ require_once 'fixture/TestView.php';
 /**
  * @medium
  */
-class FrontControllerTest extends PHPUnit_Framework_TestCase
+class FrontControllerTest extends PHPUnit\Framework\TestCase
 {
     /**
      * @covers FrontController::__construct
@@ -13,9 +13,9 @@ class FrontControllerTest extends PHPUnit_Framework_TestCase
      */
     public function testDispatchingWorksCorrectly()
     {
-        $request  = new Request(array('REQUEST_URI' => '/test'));
+        $request = new Request(['REQUEST_URI' => '/test']);
         $response = new Response;
-        $router   = new Router;
+        $router = new Router;
         $router->set('test', 'TestController');
 
         $frontController = new FrontController(
@@ -29,7 +29,8 @@ class FrontControllerTest extends PHPUnit_Framework_TestCase
         );
 
         $this->assertInstanceOf(
-          'TestView', $frontController->dispatch($router)
+          'TestView',
+            $frontController->dispatch($router)
         );
     }
 }

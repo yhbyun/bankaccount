@@ -2,7 +2,7 @@
 /**
  * @small
  */
-class ControllerFactoryTest extends PHPUnit_Framework_TestCase
+class ControllerFactoryTest extends PHPUnit\Framework\TestCase
 {
     protected $controllerFactory;
 

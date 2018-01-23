@@ -2,7 +2,7 @@
 /**
  * @medium
  */
-class RouterTest extends PHPUnit_Framework_TestCase
+class RouterTest extends PHPUnit\Framework\TestCase
 {
     protected $router;
 
@@ -30,11 +30,12 @@ class RouterTest extends PHPUnit_Framework_TestCase
     public function testCorrectControllerIsSelected()
     {
         $request = new Request(
-          array('REQUEST_URI' => '/bankaccount/id/1')
+          ['REQUEST_URI' => '/bankaccount/id/1']
         );
 
         $this->assertEquals(
-          'BankAccountController', $this->router->route($request)
+          'BankAccountController',
+            $this->router->route($request)
         );
 
         $this->assertEquals(1, $request->get('id'));
@@ -46,7 +47,7 @@ class RouterTest extends PHPUnit_Framework_TestCase
      */
     public function testExceptionWhenNoControllerCanBeSelected()
     {
-        $request = new Request(array('REQUEST_URI' => '/is/not/configured'));
+        $request = new Request(['REQUEST_URI' => '/is/not/configured']);
         $this->router->route($request);
     }
 
@@ -56,7 +57,7 @@ class RouterTest extends PHPUnit_Framework_TestCase
      */
     public function testExceptionWhenSomethingIsWrongWithTheValues()
     {
-        $request = new Request(array('REQUEST_URI' => '/bankaccount/id'));
+        $request = new Request(['REQUEST_URI' => '/bankaccount/id']);
         $this->router->route($request);
     }
 }

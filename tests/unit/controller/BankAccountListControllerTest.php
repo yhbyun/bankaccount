@@ -2,7 +2,7 @@
 /**
  * @small
  */
-class BankAccountListControllerTest extends PHPUnit_Framework_TestCase
+class BankAccountListControllerTest extends PHPUnit\Framework\TestCase
 {
     protected $controller;
     protected $mapper;
@@ -36,12 +36,14 @@ class BankAccountListControllerTest extends PHPUnit_Framework_TestCase
     {
         $this->mapper->expects($this->any())
                      ->method('getAllIds')
-                     ->will($this->returnValue(array(1)));
+                     ->will($this->returnValue([1]));
 
         $this->response->expects($this->once())
                        ->method('set')
-                       ->with($this->equalTo('ids'),
-                              $this->equalTo(array(1)));
+                       ->with(
+                           $this->equalTo('ids'),
+                              $this->equalTo([1])
+                       );
 
         $view = $this->controller->execute($this->request, $this->response);
 

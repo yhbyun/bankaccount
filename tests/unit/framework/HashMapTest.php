@@ -2,7 +2,7 @@
 /**
  * @small
  */
-class HashMapTest extends PHPUnit_Framework_TestCase
+class HashMapTest extends PHPUnit\Framework\TestCase
 {
     /**
      * @covers HashMap::get

@@ -2,7 +2,7 @@
 /**
  * @small
  */
-class RequestTest extends PHPUnit_Framework_TestCase
+class RequestTest extends PHPUnit\Framework\TestCase
 {
     /**
      * @covers Request::__call
@@ -10,7 +10,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
      */
     public function testRequestUri()
     {
-        $request = new Request(array('REQUEST_URI' => '/'));
+        $request = new Request(['REQUEST_URI' => '/']);
         $this->assertEquals('/', $request->getServer('REQUEST_URI'));
     }
 

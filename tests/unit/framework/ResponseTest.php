@@ -2,7 +2,7 @@
 /**
  * @small
  */
-class ResponseTest extends PHPUnit_Framework_TestCase
+class ResponseTest extends PHPUnit\Framework\TestCase
 {
     /**
      * @covers Response::getHeaders
@@ -24,7 +24,8 @@ class ResponseTest extends PHPUnit_Framework_TestCase
         $response->addHeader('HTTP/1.0 404 Not Found');
 
         $this->assertContains(
-          'HTTP/1.0 404 Not Found', $response->getHeaders()
+          'HTTP/1.0 404 Not Found',
+            $response->getHeaders()
         );
     }
 }

@@ -2,7 +2,7 @@
 /**
  * @large
  */
-class BankAccountMapperTest extends PHPUnit_Extensions_Database_TestCase
+class BankAccountMapperTest extends PHPUnit\DbUnit\TestCase
 {
     protected $db;
     protected $mapper;
@@ -12,7 +12,7 @@ class BankAccountMapperTest extends PHPUnit_Extensions_Database_TestCase
      */
     protected function setUp()
     {
-        $this->db     = new PDO('sqlite::memory:');
+        $this->db = new PDO('sqlite::memory:');
         $this->mapper = new BankAccountMapper($this->db);
 
         $this->db->exec(
@@ -39,7 +39,7 @@ class BankAccountMapperTest extends PHPUnit_Extensions_Database_TestCase
      */
     public function testListOfBankAccountIdsCanBeRetrieved()
     {
-        $this->assertEquals(array(1, 2), $this->mapper->getAllIds());
+        $this->assertEquals([1, 2], $this->mapper->getAllIds());
     }
 
     /**

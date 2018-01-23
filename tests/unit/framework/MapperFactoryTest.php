@@ -2,7 +2,7 @@
 /**
  * @small
  */
-class MapperFactoryTest extends PHPUnit_Framework_TestCase
+class MapperFactoryTest extends PHPUnit\Framework\TestCase
 {
     protected $mapperFactory;
 
